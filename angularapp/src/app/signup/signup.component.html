@@ -1,0 +1,41 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="50%">
+     <mat-toolbar>Grievance Cell</mat-toolbar>
+     <div id="signupBox">
+        <h3 style="padding-top: 30px; color: blue; font-size: 20px;"fxLayoutAlign="center">Sign-Up</h3>
+        <form #signup = "ngForm" (ngSubmit) = "registerUser()" fxLayoutAlign="stretch" fxLayout="column" class="signup-form">
+            <mat-form-field appearance="fill">
+              <input [(ngModel)]="registerUserData.email" name="email" matInput type="email" id="email" placeholder="Enter email" required>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input [(ngModel)]="registerUserData.username" name="username" matInput type="text" id="username" placeholder="Enter username" required>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <input [(ngModel)]="registerUserData.mobileNumber" name="telno" matInput type="tel" id="mobileNumber" placeholder="Enter mobile number" required>
+              </mat-form-field>
+            <mat-form-field appearance="fill">
+              <input [(ngModel)]="registerUserData.password" name="password" matInput [type]="hide ? 'password' : 'text'" id="password" placeholder="Enter password" required>
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput [type]="hide ? 'password' : 'text'"id="confirmPassword" placeholder="Confirm password" required>
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+            <!-- <mat-form-field appearance="fill">
+              <mat-label>Select Roles</mat-label>
+              <mat-select required>
+                <mat-option value="Admin">Admin</mat-option>
+              <mat-option value="Employee">Employee</mat-option>
+              <mat-option value="Customer">Customer</mat-option>
+              </mat-select>
+            </mat-form-field> -->
+            <h4 style="text-align: right;">Already a User?<a id="signinLink" routerLink="/">Login</a></h4>
+            <input id="submitButton" type="submit" class="btn btn-primary" value="Sign Up" style="width: 20%; margin-left: 40%;">
+          </form>
+      </div>
+   </mat-card>
+</div>

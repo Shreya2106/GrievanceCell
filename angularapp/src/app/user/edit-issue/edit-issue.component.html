@@ -1,0 +1,21 @@
+<div fxLayoutAlign="end end" fxFlexFill class="main-div">
+    <mat-card fxFlex="70%">
+        <form #editIssueForm="ngForm" (ngSubmit)="editIssueByUser()"  fxLayoutAlign="stretch" fxLayout="column" class="issue-form">
+            <mat-form-field appearance="fill" >
+                <input matInput type="text" id="name" name="issueName" placeholder="Name of issue" size="60" required [(ngModel)]="statusDetail.complaintName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <textarea matInput rows="8" cols="60" id="description" name="description" placeholder="Description" required [(ngModel)]="statusDetail.status.statusDesc"></textarea>
+            </mat-form-field>
+            <!-- <mat-form-field appearance="fill">
+                <input matInput #img type="url" id="imageUrl" name="url" placeholder="Image Url" (change)="preview(img.value)" size="60" required >
+            </mat-form-field>
+            <div>
+                <img [src]="imgURL" id="imagePreviewArea" height="250" width="400" *ngIf="imgURL" >
+            </div> -->
+            <br>
+            <input type="submit" id="submitButton" class="btn btn-primary" value="Update" style="width: 20%; margin-left: 40%;">
+            <input type="button" id="backButton" (click)="backToUserHome()" class="btn btn-info mt-2" value="Back" style="width: 20%; margin-left: 40%;">
+        </form>
+    </mat-card>
+</div>

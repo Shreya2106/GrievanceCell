@@ -1,0 +1,23 @@
+<div>
+  <mat-card style="height: 500px;">
+    <h3 style="padding-top: 25px;color: blue; font-size: 20px;"fxLayoutAlign="center">ADD</h3>
+      <form #addEmployeeForm="ngForm" (ngSubmit)="addEmployeesByAdmin()"  fxLayoutAlign="stretch" fxLayout="column" >
+          <mat-form-field appearance="fill">
+              <input matInput type="text" name="name" id="enterName" placeholder="Enter name" required [(ngModel)]="addEmployeeByAdmin.name" required>
+            </mat-form-field>
+          <mat-form-field appearance="fill">
+            <input matInput type="email" name="email" id="enterEmail" placeholder="Enter email" required [(ngModel)]="addEmployeeByAdmin.email" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+              <input matInput type="text" name="username" id="enterUsername" placeholder="Enter username" required [(ngModel)]="addEmployeeByAdmin.username" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <input matInput [type]="hide ? 'password' : 'text'" name="password" id="enterPassword" placeholder="Enter password" required [(ngModel)]="addEmployeeByAdmin.password" required>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+           </mat-form-field>
+           <input type="submit" id="addButton" class="btn btn-primary" value="ADD" style="width: 20%; margin-left: 40%;">
+        </form>
+  </mat-card>
+</div>

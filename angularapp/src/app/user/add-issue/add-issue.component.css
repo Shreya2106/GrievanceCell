@@ -1,0 +1,17 @@
+.navbar{
+  padding-left: 30px;
+  padding-top: 20px;
+  height: 10%;
+}
+.navbar-nav {
+  margin-left: auto;
+}
+input[type=text],input[type=url],textarea{
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #F5F5F5;
+border-radius: 4px;
+box-sizing: border-box;
+background-color: #F5F5F5;
+}

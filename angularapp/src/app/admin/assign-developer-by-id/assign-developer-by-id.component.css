@@ -1,0 +1,29 @@
+.navbar{
+    padding-left: 30px;
+    padding-top: 40px;
+    height: 80px;
+  }
+  .navbar-nav {
+    margin-left: auto;
+  }
+  .split-right{
+    width: 300px;
+    align-content: flex-end;
+  }
+  .split-left{
+    width: 60%;
+    align-content: center;
+  }
+  .container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+  }
+  .inner-container{
+    justify-content: space-between;
+    color: white;
+    padding-left: 40px;
+    padding-top: 40px;
+    font-size: medium;
+  }
+  

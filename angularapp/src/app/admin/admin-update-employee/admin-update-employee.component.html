@@ -1,0 +1,20 @@
+<div>
+    <mat-card style="height: 500px;">
+      <h3 style="padding-top: 25px;color: blue; font-size: 20px;"fxLayoutAlign="center">Update</h3>
+        <form #updateEmployeeForm="ngForm"  fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="updateEmpByAdmin()">
+            <mat-form-field appearance="fill">
+              <input matInput type="email" id="enterEmail" name="email"  required [(ngModel)]="updateEmployeeByAdmin.email">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput type="text" id="enterUsername" name="username" placeholder="Enter username" required [(ngModel)]="updateEmployeeByAdmin.username">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <input matInput [type]="hide ? 'password' : 'text'" id="enterPassword" name="password" placeholder="Enter password" required [(ngModel)]="updateEmployeeByAdmin.password">
+              <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+             </mat-form-field>
+             <input type="submit" id="updateButton" class="btn btn-primary" value="Update" style="width: 20%; margin-left: 40%;">
+          </form>
+    </mat-card>
+  </div>

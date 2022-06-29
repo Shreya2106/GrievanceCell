@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <span class="navbar-brand mb-0 h1">Grievance Cell</span>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a id="homeButton" class="nav-link" [routerLink]="['/userhome']">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a id="addButton" class="nav-link" [routerLink]="['/useraddissue']">Add+<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a id="logoutButton" class="nav-link" style="cursor: pointer;" (click)="authService.logoutUser()">Logout</a>          </li>
+      </ul>
+    </div>
+</nav>
+<div>
+<div class="main-div">
+    <mat-card>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a id="activeButton" class="nav-link" [routerLink]="['/userhome']">Active</a>
+        </li>
+        <li class="nav-item">
+          <a id="solvedButton" class="nav-link active"[routerLink]="['/usersolvedissue']">Solved</a>
+        </li>
+      </ul>
+    </mat-card>
+</div>
+<div class="container">
+  <div class="split-left">
+    <div *ngFor="let complaint of allComplaints">
+      <div *ngIf="complaint['status']['status']==='Closed'">
+        <div id="grid{{complaint['complaintId']}}" class="inner-container mt-2" style="background-color: rebeccapurple;">
+          <div class="row">
+            <div class="col">
+              <u>Issue Id</u><p>{{complaint['complaintId']}}</p>
+            </div>
+            <div class="col">
+              <u>Issue</u><p>{{complaint['complaintName']}}</p>
+            </div>
+            <div class="col">
+              <u>Created On</u><p>{{complaint['createdOn']| date:'yyyy-MM-dd'}}</p>
+            </div>
+            <div class="col">
+              <u>Developer</u><p>{{complaint['resolvedBy']!=null ? complaint['resolvedBy']['username']:"Not Assigned Yet"}}</p>
+            </div>
+            <div class="col">
+                <u>Status</u>
+                <p>Solved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="split-right">
+    <mat-card id="userDetails" style="height: 300px;">
+    <table class="table" style="justify-content: center;">
+        <tr>
+            <td style="text-align: center; font-size: medium; font-weight: bold;">
+              {{currentUser.username}}
+            </td>
+        </tr>
+        <br><br>
+        <tr>
+          <td style="color: #f0ad4e; font-size: medium;">
+            Total Issue
+          </td>
+          <td>
+            {{totalIssue}}
+          </td>
+        </tr>
+        <br>
+        <tr>
+            <td style="color: #d9534f; font-size: medium;">
+              Active Issue
+            </td>
+            <td>
+              {{activeIssue}}
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td style="color: #5cb85c; font-size: medium;">
+              Solved Issue
+            </td>
+            <td>
+              {{solvedIssue}}
+            </td>
+        </tr>
+        <br>
+      </table>
+    </mat-card>
+  </div>
+</div>
+</div>

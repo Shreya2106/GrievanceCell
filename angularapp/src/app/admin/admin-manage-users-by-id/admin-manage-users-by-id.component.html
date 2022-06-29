@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <span class="navbar-brand mb-0 h1">Grievance Cell</span>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a id="homeButton" class="nav-link" [routerLink]="['/adminhome']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a id="manageUserButton" class="nav-link active" [routerLink]="['/adminmanageusers']">Manage User</a>
+          </li>
+          <li class="nav-item">
+            <a id="logoutButton" class="nav-link" style="cursor: pointer;" (click)="authService.logoutUser()">Logout</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  <div class="container" id="updateDeveloperManage">
+    <div class="split-left">
+  
+        <div class="row">
+            <div class="col">
+               <h1>ID</h1>
+            </div>
+            <div class="col">
+                <h1>Username</h1>
+             </div>
+             <div class="col">
+                <h1>Role</h1>
+             </div>
+             
+         </div>
+      <div id="grid1" class="inner-container mt-2" style="background-color: rebeccapurple;">
+        <div class="row">
+          <div class="col">
+             <p>{{employeeDetailById[0]['id']}}</p>
+          </div>
+          <div class="col">
+            <p>{{employeeDetailById[0]['username']}}</p>
+          </div>
+          <div class="col">
+            <p>Developer</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    <br><br>
+    <div id="comp-render" class="split-right" *ngIf="display1">
+        <app-admin-update-employee></app-admin-update-employee>
+    </div>
+   <div >
+    <button class="btn btn-lg btn-info" value="Back" (click)="backToManageUserPage()">Back</button>
+   </div>
+  
+  
+  </div>
+  
