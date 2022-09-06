@@ -1,0 +1,26 @@
+.main-div mat-card{
+    padding: 0px;
+    font-family: 'Oleo Script', cursive;
+}
+.login-head{
+    padding-top: 25px;
+}
+.login-form{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.mat-toolbar{
+    background-color: rgb(135, 148, 228);
+    color: white;
+    text-align: center;
+}
+h3{
+    font-family: 'Oleo Script', cursive;
+}
+body{
+    background-image:url("/assets/cliparts/login1.png");
+    background-size:50%;
+    background-repeat:no-repeat;
+    background-position:0 50%;
+    background-color:white;
+}

@@ -1,0 +1,20 @@
+<div>
+    <mat-card style="padding-bottom: 2%;">
+      <h3 style="padding-top: 25px;color: rgb(150, 161, 230); font-size: 20px;font-family: 'Oleo Script', cursive;"fxLayoutAlign="center">Update Form</h3>
+        <form #updateEmployeeForm="ngForm"  fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="updateEmpByAdmin()">
+            <mat-form-field appearance="fill">
+              <input matInput type="email" id="enterEmail" name="email"  required [(ngModel)]="updateEmployeeByAdmin.email">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <input matInput type="text" id="enterUsername" name="username" placeholder="Enter username" required [(ngModel)]="updateEmployeeByAdmin.username">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <input matInput [type]="hide ? 'password' : 'text'" id="enterPassword" name="password" placeholder="Enter password" required [(ngModel)]="updateEmployeeByAdmin.password">
+              <button mat-icon-button type="button" matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+             </mat-form-field>
+             <input type="submit" id="updateButton" value="Update" style="width: 40%; margin-left: 30%;background-color:rgb(135, 148, 228); border-color: rgb(135, 148, 228);">
+          </form>
+    </mat-card>
+  </div>

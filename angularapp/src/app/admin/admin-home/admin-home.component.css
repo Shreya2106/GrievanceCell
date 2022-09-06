@@ -1,0 +1,52 @@
+.navbar{
+    padding-left: 30px;
+    padding-top: 40px;
+    height: 50px;
+    background-color: rgb(150, 161, 230);
+    color: white;
+}
+.navbar-nav {
+    margin-left: auto;
+}
+.split-right{
+    width: 300px;
+    align-content: flex-end;
+}
+.split-left{
+    width: 60%;
+    align-content: center;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+.inner-container{
+    justify-content: space-between;
+    color: white;
+    padding-left: 40px;
+    padding-top: 40px;
+    font-size: medium;
+}
+#complaints th{
+    color:rgb(163, 243, 155);
+    font-size: medium;
+    font-weight: normal;
+    width: 5%;
+}
+#complaints td{
+    color: white;
+}
+#complaints tr{
+    padding-top: 5%; padding-bottom: 5%;
+}
+h2{
+    font-family: 'Oleo Script', cursive;
+}
+body{
+    background-image:url("/assets/cliparts/complaint.png");
+    background-size:30%;
+    background-repeat:no-repeat;
+    background-position:bottom left;
+    min-height: 100vh;
+  }

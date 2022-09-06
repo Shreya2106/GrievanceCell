@@ -1,0 +1,43 @@
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <span class="navbar-brand mb-0 h1">Grievance Cell</span>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a id="homeButton" class="nav-link" [routerLink]="['/adminhome']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a id="manageUserButton" class="nav-link active" [routerLink]="['/adminmanageusers']">Manage User</a>
+          </li>
+          <li class="nav-item">
+            <a id="logoutButton" class="nav-link" style="cursor: pointer;" (click)="authService.logoutUser()">Logout</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+  <div class="container" id="updateDeveloperManage">
+    <div class="split-left">
+      <h2 style="text-align: center;">Current Details of employee {{employeeDetailById[0]['id']}}</h2>
+      <table style="background-color:rgb(161, 52, 235); width: 90%; text-align: center;">
+        <tr>
+          <th><u>ID</u></th>
+          <th><u>Username</u></th>
+          <th><u>Role</u></th>
+        </tr>
+        <tr>
+          <td>{{employeeDetailById[0]['id']}}</td>
+          <td>{{employeeDetailById[0]['username']}}</td>
+          <td>Developer</td>
+        </tr>
+      </table>
+    </div>
+    <br><br>
+    <div id="comp-render" class="split-right" *ngIf="display1">
+        <app-admin-update-employee></app-admin-update-employee>
+    </div>
+   <div >
+    <button value="Back" (click)="backToManageUserPage()" style="background-color:rgb(135, 148, 228); border-color: rgb(135, 148, 228);">Back</button>
+   </div>
+  </div>
+</body>
+  

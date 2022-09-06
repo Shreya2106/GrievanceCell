@@ -1,0 +1,95 @@
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <span class="navbar-brand mb-0 h1">Grievance Cell</span>
+  <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a id="homeButton" class="nav-link active" [routerLink]="['/adminhome']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a id="manageUserButton" class="nav-link" [routerLink]="['/adminmanageusers']">Manage User</a>
+        </li>
+        <li class="nav-item">
+          <a id="logoutButton" class="nav-link" style="cursor: pointer;" (click)="authService.logoutUser()">Logout</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+<div>
+<div class="main-div">
+  <mat-card>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a id="newButton" class="nav-link" [routerLink]="['/adminhome']">New</a>
+      </li>
+      <li class="nav-item">
+        <a id="activeButton" class="nav-link active" [routerLink]="['/adminactiveissue']">Active</a>
+      </li>
+      <li class="nav-item">
+        <a id="solvedButton" class="nav-link"[routerLink]="['/adminsolvedissue']">Solved</a>
+      </li>
+    </ul>
+  </mat-card>
+</div>
+<div class="container">
+    <div class="split-left">
+      <h2 style="text-align: center;">Active Complaints</h2>
+      <div *ngFor="let complaint of allComplaintsByAdmin ; let i=index;">
+        <div *ngIf="complaint['status']['status']==='Active'">
+          <table id="complaints" style="background-color:rgb(161, 52, 235); width: 90%; text-align: center; border-collapse:separate;border-spacing: 0 10px;">
+            <tr>
+                <th><u>Issue Id</u></th>
+                <th><u>Issue</u></th>
+                <th><u>Created On</u></th>
+                <th><u>Developer</u></th>
+                <th><u>Status</u></th>
+            </tr>
+            <tr>
+              <td>{{complaint['complaintId']}}</td>
+              <td>{{complaint['complaintName']}}</td>
+              <td>{{complaint['createdOn']| date:'yyyy-MM-dd'}}</td>
+              <td>{{complaint['resolvedBy']!=null ? complaint['resolvedBy']['username']:"Not Assigned Yet"}}</td>
+              <td>Active</td>
+            </tr>
+          </table><br>
+        </div>
+      </div>
+    </div>
+    <div class="split-right">
+      <mat-card id="adminSideUserDetails" style="height: 100%;background-color: rgb(186, 186, 216);">
+      <table class="table" style="justify-content: center;">
+          <tr>
+              <td style="text-align: center; font-size: medium; font-weight: bold;">Admin</td>
+          </tr>
+          <br><br>
+          <tr>
+            <td style="color: #009100; font-size: medium;">Users</td>
+            <td>{{noUser}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td style="color: #009100; font-size: medium;">Developers</td>
+            <td>{{noDeveloper}}</td>
+          </tr>
+          <br>
+          <tr>
+            <td style="color: #009100; font-size: medium;">New Issue</td>
+            <td>{{noActive}}</td>
+          </tr>
+          <br>
+          <tr>
+              <td style="color:#009100; font-size: medium;">Solved Issue</td>
+              <td>{{noSolved}}</td>
+          </tr>
+          <br>
+          <tr>
+              <td style="color: #e6241d; font-size: medium;">Active Issue</td>
+              <td>{{noActive}}</td>
+          </tr>
+          <br>
+        </table>
+      </mat-card>
+   </div>
+ </div>
+</div>
+</body>

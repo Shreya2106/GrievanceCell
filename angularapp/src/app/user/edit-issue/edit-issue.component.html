@@ -1,0 +1,17 @@
+<div fxLayoutAlign="end end" fxFlexFill class="main-div">
+    <mat-card fxFlex="70%">
+        <form #editIssueForm="ngForm" (ngSubmit)="editIssueByUser()"  fxLayoutAlign="stretch" fxLayout="column" class="issue-form">
+            <mat-form-field appearance="fill" >
+                <input matInput type="text" id="name" name="issueName" placeholder="Name of issue" size="55" required [(ngModel)]="statusDetail.complaintName">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <textarea matInput rows="6" cols="40" id="description" name="description" placeholder="Description" required [(ngModel)]="statusDetail.status.statusDesc"></textarea>
+            </mat-form-field>
+            <br>
+        <div fxLayout="row">
+           <input type="submit" id="submitButton" value="Update" style="width: 40%; margin-left: 30%;background-color:rgb(135, 148, 228); border-color: rgb(135, 148, 228);">
+           <input type="button" id="backButton" (click)="backToUserHome()" class="btn btn-info mt-2" value="Go Back" style="width: 20%; margin-left: 40%;">
+       </div>
+    </form>
+    </mat-card>
+</div>

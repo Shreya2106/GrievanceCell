@@ -1,0 +1,15 @@
+<div fxLayoutAlign="end end" fxFlexFill class="main-div">
+  <mat-card fxFlex="70%">
+      <form #assignDeveloper="ngForm" (ngSubmit)="assignDeveloperForEachIssue()" fxLayoutAlign="stretch" fxLayout="column" class="issue-form">
+          <mat-form-field appearance="fill" >
+              <mat-label>Select Developer</mat-label>
+              <mat-select name="selectDeveloper" id="selectDeveloper"  required [(ngModel)]="assignedDeveloper['resolvedBy']['email']">
+                <div *ngFor="let emp of empdetails">
+                  <mat-option value="{{emp['email']}}" >{{emp['username']}}</mat-option>
+                </div>
+              </mat-select>
+          </mat-form-field>
+        <input type="submit" id="updateButton" value="Update" style="width: 20%; margin-left: 40%;background-color:rgb(161, 52, 235); border-color: rgb(161, 52, 235);"> 
+      </form>  
+  </mat-card>
+</div>

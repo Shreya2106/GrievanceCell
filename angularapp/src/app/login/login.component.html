@@ -1,0 +1,31 @@
+<body>
+ <h1 style="margin-top:3%; text-align:center; color:#33d4e2; font-family: 'Oleo Script', cursive; font-size: 30px;">GRIEVANCE CELL</h1>
+ <div fxLayoutAlign="end end"  class="main-div">
+ <mat-card fxFlex="30%" style="margin-right:8%;margin-top: 5%;">
+    <mat-toolbar>LOGIN</mat-toolbar>
+    <div id="loginBox">
+      <form #login = "ngForm" (ngSubmit) = "loginUser()" class="login-form"> 
+      <table style="width:100%; border-collapse:separate;border-spacing: 0 15px;margin-top: 5%;">
+        <tr>
+          <td>Email: </td> 
+          <td><mat-form-field appearance="fill" style="width: 90%;">
+              <input [(ngModel)]="loginUserData.email" matInput type="email" name="email" id="email" placeholder="Enter email" required ngModel>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>Password: </td>
+          <td style="width: 60%;"><mat-form-field appearance="fill">
+              <input [(ngModel)]="loginUserData.password" matInput [type]="hide ? 'password' : 'text'" name="pass" id="password" placeholder="Enter password" required ngModel>
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+          </mat-form-field></td>
+        </tr>
+      </table>
+      <input id="loginButton" type="submit" value="Login" style="width: 40%; margin-left: 30%;background-color:rgb(135, 148, 228); border-color: rgb(135, 148, 228);">
+      <h3 style="text-align: right;">New User?  <a id="signupLink" [routerLink]="['signup']" routerLinkActive="active">Sign Up</a></h3>
+      </form>
+    </div>
+  </mat-card>
+</div>
+</body>
