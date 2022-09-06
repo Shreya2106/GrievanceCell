@@ -1,20 +1,20 @@
-<pre>
 ### Project Description
+<pre>
 <li>The project has three levels of users - admin, employee and user.
 <li>The users registers their grievances / complaints.
 <li>The admin creates and maps employees to the active complaints.
 <li>The employees solves the complains assigned to them.
 </pre>
 
-<pre>
 ### Technology Stack
+<pre>
 <li>Angular
 <li>Spring Boot
 <li>MySql
 </pre>
 
-<pre>
 ### Database Schema
+<pre>
 
 mysql> show tables;
 +----------------+
